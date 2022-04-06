@@ -1,0 +1,3 @@
+function validarContacto(){
+    alert('hola');
+}
