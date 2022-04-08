@@ -22,3 +22,7 @@ table, th, td {
 .footer {
     background-color: rgb(200, 250, 19);
 }
+.header-menu, a{
+    color: white;
+    text-decoration: none;
+}
