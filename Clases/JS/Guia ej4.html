@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <script>
+        //Ejercicio 4
+        window.document.write("Ejercicio 4</br>")
+        var texto
+        texto = prompt("Ingrese una cadena de texto")
+        function analizarCadena(texto){
+            if (texto == texto.toLowerCase()) 
+            {
+                window.document.write("La cadena se encuentra en minuscula")
+            }else{
+                if (texto == texto.toUpperCase()) 
+                {
+                    window.document.write("La cadena se encuentra en mayuscula")
+                }else{
+                    window.document.write("La cadena contiene minusculas como mayusculas")
+                }
+            }  
+        }
+        analizarCadena(texto);
+      
+
+    </script>
+</head>
+<body>  
+</body>
+</html>

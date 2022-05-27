@@ -1,0 +1,23 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <script>
+        //Ejercicio 7
+        function cambiarColor(color){
+            document.getElementById('tColor').style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body>  
+    <span>Elija el color para cambiar el control de texto:</span>
+    <button id="blue" onClick="cambiarColor(this.id)">Azul</button>
+    <button id="red" onClick="cambiarColor(this.id)">Rojo</button>
+    <button id="yellow" onClick="cambiarColor(this.id)">Amarillo</button>
+    <br/>
+    <input type="text" nombre="tColor" id="tColor"><br/>
+</body>
+</html>

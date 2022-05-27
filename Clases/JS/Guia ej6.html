@@ -1,0 +1,55 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <script>
+        //Ejercicio 6
+
+        function calcular() { 
+            var num1, num2, resultado
+            num1 = parseInt(document.getElementById('num1').value);
+            num2 = parseInt(document.getElementById('num2').value);
+            
+            for (i = 0; i < document.fecuaciones.operacion.length; i++){ 
+      	        if (document.fecuaciones.operacion[i].checked) {
+         	        operacion = (document.fecuaciones.operacion[i].value)
+ 		        }
+   	        }
+            
+            switch(operacion){
+                case 'sumar':
+                    resultado = num1 + num2;
+                    alert(resultado)
+                break;
+                case 'restar':
+                    resultado = num1 - num2;
+                    alert(resultado)
+                break;
+                case 'multiplicar':
+                    resultado = num1 * num2;
+                    alert(resultado)
+                break;
+                case 'dividir':
+                    resultado = num1 / num2;
+                    alert(resultado)
+                break;
+            }
+            
+        }
+    </script>
+</head>
+<body>  
+    <span>Ingrese un numero:</span><input type="text" nombre="Numero uno" id="num1"><br/>
+    <span>Ingrese un segundo numero:</span><input type="text" nombre="Numero dos" id="num2"><br/>
+    <form name="fecuaciones">
+        <label>Sumar:</label><input type="radio" name="operacion" value="sumar" id="sumar"><br/>
+        <label>Restar:</label><input type="radio" name="operacion" value="restar" id="restar"><br/>
+        <label>Multiplicar:</label><input type="radio" name="operacion" value="multiplicar" id="multiplicar"><br/>
+        <label>Dividir:</label><input type="radio" name="operacion" value="dividir" id="dividir"><br/>
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </form>
+</body>
+</html>

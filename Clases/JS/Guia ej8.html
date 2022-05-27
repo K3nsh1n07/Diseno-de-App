@@ -1,0 +1,37 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="ej8.css">
+    <title>Mi pagina</title>
+
+</head>
+<body>  
+    <p class="visible" id="pNoticia" >Noticia Reciente: lorem impun de noticia reciente <a href="" id ="aleyendo" class="visible" onclick="mostrar()">"continuar leyendo.."</a></p>
+    <p class="oculto" id="pNoticiaDetalle">Reciente que facilmente no podes ver: lorem impun de noticia reciente</p>
+    <script>
+        //Ejercicio 8
+        //profe no me sale este ejercicio, he probado de varias formas con classlist en add, remove, con classname, 
+        //pero siempre se me oculta y muestra instantaneo, en el ejemplo actual vemos como se muestra el parrafo, pero se vuelve a ocultar
+        //Parece cmo que se recarga toda la pagina
+
+        /*
+            function mostrar(){
+                document.getElementById('pNoticiaDetalle').classList.toggle("visible");
+            }
+            document.getElementById("aleyendo").onclick = function(){
+                    mostrar();
+            }
+        */
+        function mostrar(){        
+            var leyendo;
+            leyendo = document.querySelector('#pNoticiaDetalle');
+            leyendo.classList.add('visible');
+            leyendo.classList.remove('oculto');
+     
+    }
+    </script>
+</body>
+</html>

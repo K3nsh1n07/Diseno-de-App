@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+        //Declaracion de variables 
+
+        // i= 10; // Global
+        // var x = 20; // Ambito especifico. Permite declarar nueva variable
+        // let x = 30; // Permite declarar la variable una sola vez.
+        // window.alert('asd')
+        // and &&
+        // or ||
+        // not !
+        
+
+        for (let i= 0; i < 10; i ++) {
+            window.document.write(i + "<br/>") // js mas concatenacion
+            
+        }
+        
+        var array = ["hola",true,1]
+        array.forEach(element => {
+            window.document.write(element + "<br/>" );
+        });
+
+        var i=0;
+        while (i<5) {
+            window.document.write(array[i]+"<br/>")
+            i++;
+        }
+
+        var cadena;
+        cadena = "Hola c@mo estas";
+        var arroba = cadena.indexOf("@")
+        document.write(arroba)
+        
+    </script>
+</head>
+<body>
+    <h1>Prueba JS</h1>
+</body>
+</html>

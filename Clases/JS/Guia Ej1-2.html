@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <script>
+        //Ejercicio 1 
+        window.document.write("hola mundo <br/> Puedo mostrar comillas 'simples'<br/>")
+        window.document.write("Y comillas \"dobles\"")
+
+        //Ejercicio 2
+        window.document.write("</br></br>Ejercicio 2</br>")
+        
+        var array = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+        
+        for (i = 0; i < array.length; i++) {
+            window.document.write(array[i]+" es el dia "+(i+1)+" de la semana.<br/>")
+        }
+
+        //Ejercicio 3
+        window.document.write("</br></br>Ejercicio 3</br>")
+        var numero
+        numero = prompt("Ingrese un numero")
+ 
+        function esPar(numero){
+            if(numero % 2 == 0 ){
+                alert("El numero " + numero + " es par")
+            }else{
+                alert("El numero " + numero + " es impar")
+            }
+
+        }
+        esPar(numero);
+      
+
+    </script>
+</head>
+<body>  
+</body>
+</html>

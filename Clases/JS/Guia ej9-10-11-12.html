@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <script>
+        //Ejercicio 9,10,11
+   
+        function validar() {
+            var nombre, apellido, dni, sexo
+            
+            nombre = document.getElementById('nombre');
+            apellido = document.getElementById('apellido');
+            dni = document.getElementById('dni');
+            sexo = document.getElementById('sexo');
+            
+            if(nombre.value == ''){
+                alert("Tiene que escribir un nombre");
+                document.getElementById('nombre').style.background = '#ff0000'
+                
+            }
+            if(apellido.value == ''){
+                alert("Tiene que escribir un apellido");
+                document.getElementById('apellido').style.background = '#ff0000'
+            }
+            
+            if(isNaN(dni.value) || dni.value == ''){
+                alert("Tiene que escribir un DNI");
+                document.getElementById('dni').style.background = '#ff0000'
+            }
+
+            if (sexo.value.toLowerCase() != 'm' && sexo.value.toLowerCase() != 'f'){
+               alert("Tiene que escribir un sola letra, F o M, para el sexo");
+               document.getElementById('sexo').style.background = 'red'
+            }
+        }
+        //Ejercicio 12
+        function validarInt(dni){
+            if (isNaN(dni)){
+                alert("Ingrese solamente numeros");
+                document.getElementById('dni').style.background = 'red'
+            }else{
+                document.getElementById('dni').style.background = '#CCE6FF'
+            }
+        }
+
+        function cambiarColorAmarillo(control){
+            control.style.background = '#FFFFCC'
+        }
+        function cambiarColorAzul(control){
+            control.style.background = '#CCE6FF'
+        }
+    </script>
+</head>
+<body>  
+
+    <form name="fcontacto">
+        <span>Ingrese su DNI:</span><input type="text" onmousedown="cambiarColorAmarillo(this)" onkeypress="cambiarColorAzul(this)" onkeyup="validarInt(this.value)" nombre="tdni" id="dni"><br/>
+        <span>Ingrese su nombre:</span><input type="text"  onmousedown="cambiarColorAmarillo(this)" onkeypress="cambiarColorAzul(this)" nombre="tnombre" id="nombre"><br/>
+        <span>Ingrese su Apellido:</span><input type="text" onmousedown="cambiarColorAmarillo(this)" onkeypress="cambiarColorAzul(this)" nombre="tapellido" id="apellido"><br/>
+        <span>Ingrese su sexo:</span><input type="text"  onmousedown="cambiarColorAmarillo(this)" onkeypress="cambiarColorAzul(this)" nombre="tdni" id="sexo"><br/>
+        <input type="button" value="validar" onclick="validar()">
+    </form>
+</body>
+</html>
