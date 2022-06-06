@@ -1,0 +1,47 @@
+body{
+    background-color: #FFFF99;
+}
+span{
+    font-family: 'Tahoma';
+    font-size:large;
+    font-weight: 100px;
+    text-transform: capitalize;
+    color: #00f; ;
+}
+img{
+    height: 50px;
+}
+select{
+    font-family:'Perpetua';
+    font-size: x-large;
+    color:#FF0066;
+    background-color: #6699FF;
+}
+table{
+    background-color: #CC99FF;
+}
+div{
+    width: 100%;
+    text-align: center;
+}
+table hr{
+    border: medium;
+    border-color: #990099;
+    border-style: solid;
+}
+.titulo{
+    color: #008080;
+    text-decoration:blink;
+}
+.boton{
+    font-family:'Adobe Gothin Std B';
+    font-size: large;
+    color:#009900;
+    background-color: #66FFCC;
+    border-color: #808000;
+}
+.texto{
+    font-family: 'Times New Roman';
+    color:#6600CC;
+    background-color:#CCCCFF ;
+}
