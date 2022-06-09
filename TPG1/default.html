@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <form id="fEntradas" action="ConfirmacionGET.asp" method="get">
+        <form id="fEntradas" action="ConfirmacionGET.asp" method="get" onsubmit="return validarFormulario();">
             <table>
                 <tr>
                     <th class="titulo" colspan="4">ENTRADAS-TEK</th>
@@ -76,7 +76,7 @@
                     <td><span>E-Mail</span></td>
                     <td><input class="texto" type="email" name="temail" id="temail" onblur="validarCampo(this, this.value,'E-mail');"></td>
                     <td><span>Confirme el E-email</span></td>
-                    <td><input class="texto" type="email" name="tCemail" id="tCemail" onblur="validarCampo(this, this.value, 'Confirme-email'); validarConfirmacionMail(temail.value, this.value);"></td>
+                    <td><input class="texto" type="email" name="tCemail" id="tCemail" onblur="validarCampo(this, this.value, 'Confirme-email');"></td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -105,7 +105,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input onclick="validarFormulario()" type="radio" id="rVisa" name="rTarjeta" value="visa">
+                        <input type="radio" id="rVisa" name="rTarjeta" value="visa">
                         <input type="radio" id="rMaster" name="rTarjeta" value="master">
                         <input type="radio" id="rAmerican" name="rTarjeta" value="American Express">
                     </td>

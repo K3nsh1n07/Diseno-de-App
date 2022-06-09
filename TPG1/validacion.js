@@ -36,7 +36,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
 }
 
 function validarCampo(campo, campoValor, NombreCampo){
-   
+     
     //Validar demas campos
     //Profe, abajo esta comentado con alert, pero con el evento onblur entra en bucle.
     if (campoValor==''){
@@ -102,30 +102,66 @@ function validarCampo(campo, campoValor, NombreCampo){
 }
 function validarFormulario(){
     let equipo, cantidad ,apellido, nombre, email, cEmail, tarjetas
- 
-    equipo = document.getElementById('sEquipo').value
-    cantidad = document.getElementById('iCantidad').value
-    apellido = document.getElementById('tapellido').value
-    nombre = document.getElementById('tnombre').value
-    email = document.getElementById('temail').value
-    cEmail = document.getElementById('tCemail').value
-    tarjetas = document.getElementsByName('radio').value
-
-    //validacion completa
-    if(email!=cEmail){
-        alert("dif email")
+    
+    equipo = document.getElementById('sEquipo')
+    cantidad = document.getElementById('iCantidad')
+    apellido = document.getElementById('tapellido')
+    nombre = document.getElementById('tnombre')
+    email = document.getElementById('temail')
+    cEmail = document.getElementById('tCemail')
+    
+    // si un inpunt es valido
+    let isValid = false;
+    // cantidad max de caracteres
+    const maximo = 25;
+    //expresion regultar de texto
+    const pattern = new RegExp('^[A-Z]+$', 'i');
+    
+    //Cantidad de entradas
+    if(cantidad.value < 1 || cantidad.value  > 20 ){
+        cantidad.style.background = "red";
+        alert("Cantidad de entradas incorrectas")
+        return false;
+    }else{
+        cantidad.style.background = "";
+    }
+    
+    //Campo apellido
+    if(!pattern.test(apellido.value) || apellido.value.length > 25 ){
+        apellido.style.background = "red";
+        alert("Debe completar el Apellido")
+        return false;
+    }
+    //Campo nombre
+    if(!pattern.test(nombre.value) || nombre.value.length > 25 ){
+        nombre.style.background = "red";
+        alert("Debe completar el Nombre")
+        return false;
+    }
+    
+     //validar email vacio
+     if (email.value == ""){
+        email.style.background = "red";
+        alert("Debe ingresar un mail");
+        return false
+    }
+    //validar confirmacion vacio
+    if (cEmail.value == ""){
+        cEmail.style.background = "red";
+        alert("Debe ingresar un mail");
+        return false
+    }
+    // Validacion tarjetas
+    if(!document.querySelector('input[name="rTarjeta"]:checked')) {
+        alert("Debe Seccionar una tarjeta de credito.");
+        return false
     }
 
+   
+
+
 }
 
-function validarConfirmacionMail(mail, cMail){
-    //Chequear si son iguales
-    if (mail != cMail){
-        document.getElementById('validacionMail').innerHTML="El campo email y Confirme email deben ser el mismo mail." 
-    }else{
-        document.getElementById('validacionMail').innerHTML="" 
-    }   
-}
 //Comertarios
     /* otra forma de hacer la funcion validarCampo() {
     switch(nombreCampo){
