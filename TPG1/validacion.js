@@ -49,49 +49,43 @@ function validarCampo(campo, campoValor, NombreCampo){
 
     //validar caracteres en email
     if(NombreCampo == 'E-mail'){
-        var val1, val2, val3;
+        var val1, val2, val3,cantidadLetrasDominio;
         val1 = campoValor.indexOf("@");
         val2 = campoValor.toLowerCase().indexOf("hotmail");
         val3 = campoValor.toLowerCase().indexOf("gmail");
         
         // Armo array separando con el arroba
         x = campoValor.split("@");
+        
         //Me quedo con la parte despues del arroba
         dominio = x[x.length-1];
-
+        
         //armo arrays con punto del dominio
         y = dominio.split(".");
+        //alert(y);
         //Cuento la cantidad de letras del primer punto en el array
-        cantidadLetrasDominio = y[1].length
         
+        cantidadLetrasDominio = 0
         expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
         var esValido = expReg.test(campoValor)
-        if(esValido != true || (val2 <0 && val3 <0 ) || (cantidadLetrasDominio != 3)){
+        
+        
+        if((esValido != true)|| (val1 < 0) || (val2 <0 && val3 <0 )){
             campo.style.background = "red";
-            alert("no es valido papu");
+            if (campoValor.length!=0){
+                document.getElementById('validacionMail').innerHTML="El campo Email debe contener un arroba, un punto, tres letras después de un punto para especificar '.com' <br> y un dominio válido de mail: Gmail y Hotmail."
+            }
         }else{
-            campo.style.background = "";
-            alert("esta okay");
+            cantidadLetrasDominio = y[1].length
+            if(cantidadLetrasDominio != 3){
+                campo.style.background = "red";
+                document.getElementById('validacionMail').innerHTML="El caaampo "+ NombreCampo+" debe ser completado."
+            }else{
+                campo.style.background = "";
+                alert("esta okay");
+            }
         }
     }
-}
-
-
-function test(){
-    var cadena;
-    cadena="pedro@hotmail.cm.ar";
-    x = cadena.split("@")
-    dominio = x[x.length-1]
-    y = dominio.split(".");
-    cantidadLetrasDominio = (y[1].length);
-    if(cantidadLetrasDominio == 3){
-        alert("Esta Okay")
-    }{
-        alert("not okay")
-    }
-    
-    
-
 }
 function validarFormulario(){
     let equipo, cantidad ,apellido, nombre, email, cEmail, tarjetas
