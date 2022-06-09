@@ -10,14 +10,14 @@
 </head>
 <body>
     <div>
-        <form id="fEntradas" action="">
+        <form id="fEntradas" action="ConfirmacionGET.asp" method="get">
             <table>
                 <tr>
                     <th class="titulo" colspan="4">ENTRADAS-TEK</th>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <div id="validacion"></div>
+                        <div id="validacion" class="validacion"></div>
                     </td>
                 </tr>
                 <tr>
@@ -38,15 +38,15 @@
                     <td><span>Selecciones Ubicacion</span></td>
                     <td>
                         <select name="sUbicacion" id="sUbicacion" onchange="cargarPrecio(sEquipo.value, this.value, iCantidad.value );">
-                            <option value="popular">Popular Local</option>
-                            <option value="popular">Popular Visitante</option>
+                            <option value="popular-l">Popular Local</option>
+                            <option value="popular-s">Popular Visitante</option>
                             <option value="visitante">Platea Local</option>
                             <option value="visitante">Platea Visitante</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><span>Cantidad Entradas</span></td>
+                    <td><span onclick="test();">Cantidad Entradas</span></td>
                     <td>
                         <input type="number" id="iCantidad" value="1" class="texto" onblur="validarCampo(this, this.value, 'Cantidad');" onchange="cargarPrecio(sEquipo.value,sUbicacion.value,this.value );">
                     </td>
@@ -76,7 +76,12 @@
                     <td><span>E-Mail</span></td>
                     <td><input class="texto" type="email" name="temail" id="temail" onblur="validarCampo(this, this.value,'E-mail');"></td>
                     <td><span>Confirme el E-email</span></td>
-                    <td><input class="texto" type="email" name="tCemail" id="tCemail" onblur="validarCampo(this, this.value, 'Confirmacion de Email');"></td>
+                    <td><input class="texto" type="email" name="tCemail" id="tCemail" onblur="validarCampo(this, this.value, 'Confirmacion de Email'); validarConfirmacionMail(temail.value, this.value);"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div id="validacionMail" class="validacion"></div>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -100,7 +105,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input type="radio" id="rVisa" name="rTarjeta" value="visa">
+                        <input onclick="validarFormulario()" type="radio" id="rVisa" name="rTarjeta" value="visa">
                         <input type="radio" id="rMaster" name="rTarjeta" value="master">
                         <input type="radio" id="rAmerican" name="rTarjeta" value="American Express">
                     </td>
@@ -112,7 +117,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <input type="submit" name="bAceptar" id="bAceptar" value ="Aceptar" class="boton">
+                        <input type="submit" name="bAceptar" id="bAceptar" class="boton">
                         <input type="button" name="bLimpiar" id="bLimpiar" value="Limpiar" class="boton" onclick="document.getElementById('fEntradas').reset()">
                     </td>           
                 </tr>

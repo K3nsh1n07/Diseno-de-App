@@ -6,7 +6,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             document.getElementById('sPrecio').value= '';
             break;
         case '1':
-            if(ubicacion == 'popular'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
                 precio = 200 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -15,7 +15,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             }
             break;
         case '2':
-            if(ubicacion == 'popular'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
                 precio = 150 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -24,7 +24,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             }
             break;
         case '3':
-            if(ubicacion == 'popular'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
                 precio = 170 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -36,6 +36,8 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
 }
 
 function validarCampo(campo, campoValor, NombreCampo){
+   
+    //Validar demas campos
     //Profe, abajo esta comentado con alert, pero con el evento onblur entra en bucle.
     if (campoValor==''){
         campo.style.background = "red";
@@ -44,8 +46,78 @@ function validarCampo(campo, campoValor, NombreCampo){
         campo.style.background = "";
         document.getElementById('validacion').innerHTML=""
     }
+
+    //validar caracteres en email
+    if(NombreCampo == 'E-mail'){
+        var val1, val2, val3;
+        val1 = campoValor.indexOf("@");
+        val2 = campoValor.toLowerCase().indexOf("hotmail");
+        val3 = campoValor.toLowerCase().indexOf("gmail");
+        
+        // Armo array separando con el arroba
+        x = campoValor.split("@");
+        //Me quedo con la parte despues del arroba
+        dominio = x[x.length-1];
+
+        //armo arrays con punto del dominio
+        y = dominio.split(".");
+        //Cuento la cantidad de letras del primer punto en el array
+        cantidadLetrasDominio = y[1].length
+        
+        expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        var esValido = expReg.test(campoValor)
+        if(esValido != true || (val2 <0 && val3 <0 ) || (cantidadLetrasDominio != 3)){
+            campo.style.background = "red";
+            alert("no es valido papu");
+        }else{
+            campo.style.background = "";
+            alert("esta okay");
+        }
+    }
 }
-    /*
+
+
+function test(){
+    var cadena;
+    cadena="pedro@hotmail.cm.ar";
+    x = cadena.split("@")
+    dominio = x[x.length-1]
+    y = dominio.split(".");
+    cantidadLetrasDominio = (y[1].length);
+    if(cantidadLetrasDominio == 3){
+        alert("Esta Okay")
+    }{
+        alert("not okay")
+    }
+    
+    
+
+}
+function validarFormulario(){
+    let equipo, cantidad ,apellido, nombre, email, cEmail, tarjetas
+ 
+    equipo = document.getElementById('sEquipo').value
+    cantidad = document.getElementById('iCantidad').value
+    apellido = document.getElementById('tapellido').value
+    nombre = document.getElementById('tnombre').value
+    email = document.getElementById('temail').value
+    cEmail = document.getElementById('tCemail').value
+    tarjetas = document.getElementsByName('radio').value
+
+    
+
+}
+
+function validarConfirmacionMail(mail, cMail){
+    //Chequear si son iguales
+    if (mail != cMail){
+        document.getElementById('validacionMail').innerHTML="El campo email y Confirme email deben ser el mismo mail." 
+    }else{
+        document.getElementById('validacionMail').innerHTML="" 
+    }   
+}
+//Comertarios
+    /* otra forma de hacer la funcion validarCampo() {
     switch(nombreCampo){
         case 'Cantidad':
             if (campoValor==''){
@@ -82,7 +154,7 @@ function validarCampo(campo, campoValor, NombreCampo){
                 break;
     }*/
 
-    /*
+    /*  otra forma de hacer la function cargarPrecio(equipo, ubicacion, cEntradas) {
     if(equipo == 0){
         document.getElementById('sPrecio').value= '';
     }

@@ -45,3 +45,7 @@ table hr{
     color:#6600CC;
     background-color:#CCCCFF ;
 }
+.validacion{
+    color:red;
+    font-weight: bold;
+}
