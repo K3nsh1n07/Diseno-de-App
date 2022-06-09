@@ -82,10 +82,23 @@ function validarCampo(campo, campoValor, NombreCampo){
                 document.getElementById('validacionMail').innerHTML="El caaampo "+ NombreCampo+" debe ser completado."
             }else{
                 campo.style.background = "";
-                alert("esta okay");
+                document.getElementById('validacionMail').innerHTML="" 
             }
         }
     }
+    
+    if(NombreCampo == 'Confirme-email' && campoValor!= "" ){
+        //validar confirmacion de mail.
+        email = document.getElementById('temail').value 
+        if (email != campoValor){
+            campo.style.background = "red";
+            document.getElementById('validacionMail').innerHTML="El campo email y Confirme email deben ser el mismo mail." 
+        }else{
+            campo.style.background = "";
+            document.getElementById('validacionMail').innerHTML="" 
+        }
+    }
+
 }
 function validarFormulario(){
     let equipo, cantidad ,apellido, nombre, email, cEmail, tarjetas
@@ -98,7 +111,10 @@ function validarFormulario(){
     cEmail = document.getElementById('tCemail').value
     tarjetas = document.getElementsByName('radio').value
 
-    
+    //validacion completa
+    if(email!=cEmail){
+        alert("dif email")
+    }
 
 }
 
