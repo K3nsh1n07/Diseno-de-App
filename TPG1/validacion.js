@@ -100,6 +100,7 @@ function validarCampo(campo, campoValor, NombreCampo){
     }
 
 }
+
 function validarFormulario(){
     let equipo, cantidad ,apellido, nombre, email, cEmail, tarjetas
     
@@ -156,10 +157,6 @@ function validarFormulario(){
         alert("Debe Seccionar una tarjeta de credito.");
         return false
     }
-
-   
-
-
 }
 
 //Comertarios
