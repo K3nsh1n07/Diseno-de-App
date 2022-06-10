@@ -118,10 +118,16 @@ function validarFormulario(){
     //expresion regultar de texto
     const pattern = new RegExp('^[A-Z]+$', 'i');
     
+    //validar equipo
+    if (equipo.value == "0"){
+        alert("Debe ingresar un equipo.");
+        return false;
+    }
+    
     //Cantidad de entradas
     if(cantidad.value < 1 || cantidad.value  > 20 ){
         cantidad.style.background = "red";
-        alert("Cantidad de entradas incorrectas")
+        alert("Cantidad de entradas incorrectas.")
         return false;
     }else{
         cantidad.style.background = "";
@@ -130,7 +136,7 @@ function validarFormulario(){
     //Campo apellido
     if(!pattern.test(apellido.value) || apellido.value.length > 25 ){
         apellido.style.background = "red";
-        alert("Debe completar el Apellido")
+        alert("Debe completar el Apellido.")
         return false;
     }
     //Campo nombre
@@ -143,19 +149,19 @@ function validarFormulario(){
      //validar email vacio
      if (email.value == ""){
         email.style.background = "red";
-        alert("Debe ingresar un mail");
-        return false
+        alert("Debe ingresar un mail.");
+        return false;
     }
     //validar confirmacion vacio
     if (cEmail.value == ""){
         cEmail.style.background = "red";
-        alert("Debe ingresar un mail");
-        return false
+        alert("Debe ingresar un mail.");
+        return false;
     }
     // Validacion tarjetas
     if(!document.querySelector('input[name="rTarjeta"]:checked')) {
-        alert("Debe Seccionar una tarjeta de credito.");
-        return false
+        alert("Debe seleccionar una tarjeta de credito.");
+        return false;
     }
 }
 

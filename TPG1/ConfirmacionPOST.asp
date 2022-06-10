@@ -47,6 +47,7 @@
     %>
 	
     <h1>Confirmacion de Form</h1>
+	<!-- No se le da estilo a la tabla porque no fue solicitado-->
     <table stlye="border:1px;">
         <tr>
             <td><span>Encuentro: <% response.Write(encuentro) %></span></td>
@@ -61,6 +62,14 @@
             <td><span>Tarjeta:<% response.Write(tarjeta) %></span></td>
         </tr>
     </table>
-	<img src="imagenes/qr.jpg">
+	<a href="finalizacion.asp"><img src="/tp/imagenes/qr.png"></a>
+	<%
+		Response.Cookies("Nombre") = nombre
+		Response.Cookies("Apellido") = apellido
+		Response.Cookies("Email") = email
+        Response.Cookies("Encuentro") = encuentro
+        Response.Cookies("Ubicacion") = ubicacion
+        Response.Cookies("Cantidad") = cantidad
+	%>
 </body>
 </html>
