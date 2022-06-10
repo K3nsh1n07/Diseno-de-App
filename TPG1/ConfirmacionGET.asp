@@ -61,5 +61,6 @@
             <td><span>Tarjeta:<% response.Write(tarjeta) %></span></td>
         </tr>
     </table>
+    <img src="imagenes/qr.jpg">
 </body>
 </html>
