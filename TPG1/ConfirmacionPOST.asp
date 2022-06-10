@@ -15,14 +15,14 @@
 <body>
     <%
         dim encuentro, ubicacion, cantidad, precio, apellido, nombre, email, tarjeta
-        encuentro = Request.QueryString("sEquipo") 
-		ubicacion = Request.QueryString("sUbicacion") 
-		cantidad = Request.QueryString("iCantidad") 
-		precio = Request.QueryString("sPrecio") 
-		apellido = Request.QueryString("tapellido") 
-		nombre = Request.QueryString("tnombre") 
-		email = Request.QueryString("temail") 
-		tarjeta = Request.QueryString("rTarjeta") 
+        encuentro = Request.Form("sEquipo") 
+		ubicacion = Request.Form("sUbicacion") 
+		cantidad = Request.Form("iCantidad") 
+		precio = Request.Form("sPrecio") 
+		apellido = Request.Form("tapellido") 
+		nombre = Request.Form("tnombre") 
+		email = Request.Form("temail") 
+		tarjeta = Request.Form("rTarjeta") 
 		
 		Select Case encuentro
 			case 1 

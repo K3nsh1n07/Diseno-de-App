@@ -10,6 +10,9 @@
 </head>
 <body>
     <div>
+        <!-- dejo el form para el post
+        <form id="fEntradas" action="ConfirmacionPOST.asp" method="post" onsubmit="return validarFormulario();">
+        . -->
         <form id="fEntradas" action="ConfirmacionGET.asp" method="get" onsubmit="return validarFormulario();">
             <table>
                 <tr>
@@ -39,9 +42,9 @@
                     <td>
                         <select name="sUbicacion" id="sUbicacion" onchange="cargarPrecio(sEquipo.value, this.value, iCantidad.value );">
                             <option value="popular-l">Popular Local</option>
-                            <option value="popular-s">Popular Visitante</option>
-                            <option value="visitante">Platea Local</option>
-                            <option value="visitante">Platea Visitante</option>
+                            <option value="popular-v">Popular Visitante</option>
+                            <option value="platea-l">Platea Local</option>
+                            <option value="platea-v">Platea Visitante</option>
                         </select>
                     </td>
                 </tr>

@@ -6,7 +6,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             document.getElementById('sPrecio').value= '';
             break;
         case '1':
-            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-v'){
                 precio = 200 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -15,7 +15,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             }
             break;
         case '2':
-            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-v'){
                 precio = 150 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -24,7 +24,7 @@ function cargarPrecio(equipo, ubicacion, cEntradas) {
             }
             break;
         case '3':
-            if(ubicacion == 'popular-l' || ubicacion == 'popular-s'){
+            if(ubicacion == 'popular-l' || ubicacion == 'popular-v'){
                 precio = 170 * cEntradas
                 document.getElementById('sPrecio').value= precio;
             }else{
@@ -79,7 +79,7 @@ function validarCampo(campo, campoValor, NombreCampo){
             cantidadLetrasDominio = y[1].length
             if(cantidadLetrasDominio != 3){
                 campo.style.background = "red";
-                document.getElementById('validacionMail').innerHTML="El caaampo "+ NombreCampo+" debe ser completado."
+                document.getElementById('validacionMail').innerHTML="El campo "+ NombreCampo+" debe ser completado."
             }else{
                 campo.style.background = "";
                 document.getElementById('validacionMail').innerHTML="" 
